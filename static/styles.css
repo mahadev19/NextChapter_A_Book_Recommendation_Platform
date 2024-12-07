@@ -1,0 +1,116 @@
+body {
+    background-color: rgba(136, 131, 131, 0.562);
+    color: white;
+}
+
+.logo-navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 270px; /* Adjust logo size */
+    height: auto;
+    }
+
+    .navbar {
+        background-color: #13c8ec;
+        margin: 0 auto;
+        padding: 1px 4px;  /* Reduced top and bottom padding */
+        text-align: center;
+        flex-grow: 1;
+        margin-left: -10px;  /* Reduced from -50px to -20px to bring it closer to the left */
+    }
+    
+    .navbar .container {
+        padding-left: 0; /* Remove default left padding */
+        margin-right: -150px; 
+        margin-left: -20px; /* Adjusted to match the navbar box movement */
+        padding-top: 4px;   /* Reduced top padding */
+        padding-bottom: 4px; /* Reduced bottom padding */
+    }
+    
+    .navbar .navbar-nav {
+        text-align: center;  /* Fixed typo: 'cent' to 'center' */
+        margin-right: 140px;   /* Moves the entire navbar box slightly to the left */
+    }
+    
+    .navbar a {
+        color: #333;  /* Dark color for links */
+        font-weight: bold;
+    }
+    
+    .navbar a:hover {
+        color: #fff;  /* White color on hover */
+    }
+    
+
+.header-title {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.book-card {
+    margin-top: 50px;
+}
+
+.book-title {
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.book-author {
+    color: #000000;
+    font-size: 16px;
+}
+
+.book-votes, .book-rating {
+    color: #070707;
+    font-size: 14px;
+}
+
+.recommend-form {
+    margin-bottom: 30px;
+}
+
+.submit-btn {
+    margin-top: 10px;
+}
+.floating-line {
+    position: relative;
+    overflow: hidden; /* Hide the overflowing part of the text */
+    height: 35px; /* Adjust the height as needed */
+    width: 100%; /* Ensure the container takes full width */
+    margin-top: -55px; /* Reduce the gap above the note */
+}
+
+.note p {
+    margin: 0; /* Remove the default margin */
+    background: none; /* Remove the background */
+    color: #fd0404; /* Text color */
+    position: absolute; /* Make the element positioned relative to the container */
+    white-space: nowrap; /* Prevent line breaks */
+    animation: floatToLeft 15s linear infinite; /* Apply the animation */
+    top: -5px; /* Move the text slightly upward */
+    font-size: 18px; /* Increase font size */
+}
+
+
+
+@keyframes floatToLeft {
+    0% {
+        left: 100%; /* Start from outside the right edge */
+    }
+    100% {
+        left: -100%; /* Move to outside the left edge */
+    }
+}
+

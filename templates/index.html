@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Next Chapter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="static/llogo.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Logo and Navbar Container -->
+    <div class="logo-navbar-container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/recommend">Recommend</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="floating-line">
+        <div class="note">
+            <p>Note * Here you can see top 20 books based on rating. !</p>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="header-title">Top 20 Books</h1>
+        <div class="row">
+            {% for i in range(book_name|length) %}
+                <div class="col-md-3 book-card">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="{{ image[i] if image[i] else url_for('static', filename='placeholder.jpg') }}" alt="{{ book_name[i] }}">
+                            <p class="book-title">{{ book_name[i] }}</p>
+                            <h4 class="book-author">{{ author[i] }}</h4>
+                            <h4 class="book-votes">Votes - {{ votes[i] }}</h4>
+                            <h4 class="book-rating">Rating - {{ rating[i] }}</h4>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="primary-footer text-center" style="background-color: #333; padding: 15px;">
+        <div class="container" style="color: white;">
+            <p>2024 © Next Chapter - a book Recommendation platform | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
